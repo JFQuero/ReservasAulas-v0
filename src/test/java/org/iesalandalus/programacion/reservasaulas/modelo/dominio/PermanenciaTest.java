@@ -1,11 +1,17 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
 
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+
+import org.junit.Test;
+
 public class PermanenciaTest {
-	/*
+
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	
-	private LocalDate dia = LocalDate.of(2018, 12, 1); 
+
+	private LocalDate dia = LocalDate.of(2018, 12, 1);
 	Permanencia permanencia = new Permanencia(dia, Tramo.MANANA);
 
 	@Test
@@ -20,7 +26,7 @@ public class PermanenciaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorNoValidoTest() {
 		Permanencia permanencia = null;
@@ -39,7 +45,7 @@ public class PermanenciaTest {
 			assertNull(permanencia);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		Permanencia otraPermanencia;
@@ -51,7 +57,7 @@ public class PermanenciaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructoCopiaNoValidoTest() {
 		Permanencia otraPermanencia = null;
@@ -63,13 +69,13 @@ public class PermanenciaTest {
 			assertNull(otraPermanencia);
 		}
 	}
-	
+
 	@Test
 	public void getTest() {
 		assertEquals(dia, permanencia.getDia());
 		assertEquals(Tramo.MANANA, permanencia.getTramo());
 	}
-	
+
 	@Test
 	public void equalsTest() {
 		Permanencia permanencia1 = new Permanencia(dia, Tramo.MANANA);
@@ -80,7 +86,7 @@ public class PermanenciaTest {
 		assertEquals(permanencia, permanencia1);
 		assertNotEquals(permanencia1, permanencia2);
 	}
-	
+
 	@Test
 	public void hashCodeTest() {
 		Permanencia permanencia1 = new Permanencia(dia, Tramo.MANANA);
@@ -89,10 +95,9 @@ public class PermanenciaTest {
 		assertEquals(permanencia.hashCode(), permanencia1.hashCode());
 		assertNotEquals(permanencia1.hashCode(), permanencia2.hashCode());
 	}
-	
+
 	@Test
 	public void toStringTest() {
 		assertEquals("[dia=01/12/2018, tramo=Mañana]", permanencia.toString());
 	}
-*/
 }
