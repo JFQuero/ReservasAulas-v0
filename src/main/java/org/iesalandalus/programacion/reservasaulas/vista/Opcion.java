@@ -57,19 +57,13 @@ public enum Opcion {
 
 	INSERTAR_RESERVA("Realizar Reserva") {
 		public void ejecutar() {
-			vista.insertarReserva();
+			vista.realizarReserva();
 		}
 	},
 
 	BORRAR_RESERVA("Cancelar Reserva") {
 		public void ejecutar() {
-			vista.borrarReserva();
-		}
-	},
-
-	BUSCAR_RESERVA("Buscar Reserva") {
-		public void ejecutar() {
-			vista.buscarReserva();
+			vista.anularReserva();
 		}
 	},
 
@@ -81,19 +75,19 @@ public enum Opcion {
 
 	LISTAR_RESERVAS_AULA("Listar las reservas de un Aula") {
 		public void ejecutar() {
-			vista.ListarReservasAula();
+			vista.listarReservasAula();
 		}
 	},
 
 	LISTAR_RESERVAS_PROFESOR("Listar las reservas de un Profesor") {
 		public void ejecutar() {
-			vista.ListarReservasProfesor();
+			vista.listarReservasProfesor();
 		}
 	},
 
 	LISTAR_RESERVAS_PERMANENCIA("Listar las reservas de una Permanencia") {
 		public void ejecutar() {
-			vista.ListarReservasPermanencia();
+			vista.listarReservasPermanencia();
 		}
 	},
 
