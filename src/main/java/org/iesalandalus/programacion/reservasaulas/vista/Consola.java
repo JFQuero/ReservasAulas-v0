@@ -93,7 +93,7 @@ public class Consola {
 		}
 	}
 
-	public static LocalDate Dia() {
+	public static LocalDate leerDia() {
 		int dia;
 		int mes;
 		int ano;
