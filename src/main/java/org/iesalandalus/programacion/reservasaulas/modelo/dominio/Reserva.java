@@ -31,7 +31,7 @@ public class Reserva {
 
 	private void setProfesor(Profesor profesor) {
 		if (profesor == null) {
-			throw new IllegalArgumentException("La reserva debe estar a nombre de un profesor.");
+			throw new IllegalArgumentException("La reserva debe estar a nombre de un profesor registrado.");
 		}
 		this.profesor = profesor;
 	}

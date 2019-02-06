@@ -72,7 +72,7 @@ public class Consola {
 	}
 
 	public static String leerNombreProfesor() {
-		System.out.print("Introduce el nombre: ");
+		System.out.print("Introduce el nombre del profesor: ");
 		String nombre = Entrada.cadena();
 		return nombre;
 	}
