@@ -36,7 +36,7 @@ public class Profesor {
 		if (nombre == null) {
 			throw new IllegalArgumentException("El nombre del profesor no puede ser nulo.");
 		}
-		if (nombre == "") {
+		if (nombre.equals("")) {
 			throw new IllegalArgumentException("El nombre del profesor no puede estar vacío.");
 		}
 		this.nombre = nombre;

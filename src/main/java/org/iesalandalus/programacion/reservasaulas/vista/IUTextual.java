@@ -8,7 +8,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.*;
 public class IUTextual {
 
 	private static final String ERROR = "ERROR: ";
-	private static final String NOMBRE_VALIDO = "Juan Fernandez Quero"; //No he encontrado una oportunidad para usarlo
+	private static final String NOMBRE_VALIDO = "Juan Fernandez Quero"; // No he encontrado una oportunidad para usarlo
 	private static final String CORREO_VALIDO = "correo@valido.com";
 	private ModeloReservasAulas modelo;
 
@@ -166,52 +166,68 @@ public class IUTextual {
 
 	public void listarReservas() {
 		Consola.mostrarCabecera("Listar Reservas");
-		String[] reservas = modelo.representarReservas();
-		if (reservas.length > 0) {
-			for (String reserva : reservas) {
-				System.out.println(reserva);
+		try {
+			String[] reservas = modelo.representarReservas();
+			if (reservas.length > 0) {
+				for (String reserva : reservas) {
+					System.out.println(reserva);
+				}
+			} else {
+				System.out.println("No hay reservas que listar.");
 			}
-		} else {
-			System.out.println("No hay reservas que listar.");
+		} catch (IllegalArgumentException e) {
+			System.out.println(ERROR + e.getMessage());
 		}
 	}
 
 	public void listarReservasAula() {
 		Consola.mostrarCabecera("Listar reservas de un aula");
-		Aula aula = new Aula(Consola.leerNombreAula());
-		Reserva[] reservas = modelo.getReservasAula(aula);
-		if (reservas.length > 0) {
-			for (Reserva reserva : reservas) {
-				System.out.println(reserva);
+		try {
+			Aula aula = new Aula(Consola.leerNombreAula());
+			Reserva[] reservas = modelo.getReservasAula(aula);
+			if (modelo.getNumReservas() > 0 & reservas[0] != null) {
+				for (Reserva reserva : reservas) {
+					System.out.println(reserva);
+				}
+			} else {
+				System.out.println("No hay reservas que listar.");
 			}
-		} else {
-			System.out.println("No hay reservas que listar.");
+		} catch (IllegalArgumentException e) {
+			System.out.println(ERROR + e.getMessage());
 		}
 	}
 
 	public void listarReservasProfesor() {
 		Consola.mostrarCabecera("Listar reservas de un profesor");
-		Profesor profesor = new Profesor(Consola.leerNombreProfesor(), CORREO_VALIDO);
-		Reserva[] reservas = modelo.getReservasProfesor(profesor);
-		if (reservas.length > 0) {
-			for (Reserva reserva : reservas) {
-				System.out.println(reserva);
+		try {
+			Profesor profesor = new Profesor(Consola.leerNombreProfesor(), CORREO_VALIDO);
+			Reserva[] reservas = modelo.getReservasProfesor(profesor);
+			if (modelo.getNumReservas() > 0 & reservas[0] != null) {
+				for (Reserva reserva : reservas) {
+					System.out.println(reserva);
+				}
+			} else {
+				System.out.println("No hay reservas que listar.");
 			}
-		} else {
-			System.out.println("No hay reservas que listar.");
+		} catch (IllegalArgumentException e) {
+			System.out.println(ERROR + e.getMessage());
 		}
 	}
 
 	public void listarReservasPermanencia() {
 		Consola.mostrarCabecera("Listar reservas de una permanencia");
-		Permanencia permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
-		Reserva[] reservas = modelo.getReservasPermanencia(permanencia);
-		if (reservas.length > 0) {
-			for (Reserva reserva : reservas) {
-				System.out.println(reserva);
+		try {
+			Permanencia permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
+			Reserva[] reservas = modelo.getReservasPermanencia(permanencia);
+			if (modelo.getNumReservas() > 0 & reservas[0] != null) {
+				for (Reserva reserva : reservas) {
+					System.out.println(reserva);
+				}
+			} else {
+				System.out.println("No hay reservas que listar.");
 			}
-		} else {
-			System.out.println("No hay reservas que listar.");
+		} catch (IllegalArgumentException e) {
+			System.out.println(ERROR + e.getMessage());
 		}
 	}
 

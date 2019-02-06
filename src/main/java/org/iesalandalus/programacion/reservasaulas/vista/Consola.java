@@ -54,7 +54,7 @@ public class Consola {
 		String nombre = Entrada.cadena();
 		System.out.print("Introduce el correo: ");
 		String correo = Entrada.cadena();
-		System.out.print("¿Desea añadir un numero de telefono?");
+		System.out.println("¿Desea añadir un numero de telefono?");
 		System.out.println(" 1.- Si. ");
 		System.out.println(" 2.- No. ");
 		int respuesta;
@@ -78,7 +78,7 @@ public class Consola {
 	}
 
 	public static Tramo leerTramo() {
-		System.out.print("Elija el Tramo: ");
+		System.out.println("Elija el Tramo: ");
 		System.out.println(" 1.- Mañana. ");
 		System.out.println(" 2.- Tarde. ");
 		int respuesta;
@@ -100,23 +100,15 @@ public class Consola {
 		do {
 			System.out.print("Introduce el dia: (1 - 31) ");
 			dia = Entrada.entero();
-			while (dia <1 & dia >31) {
-				System.out.print("Introduce un dia valido: (1 - 31) ");
-				dia = Entrada.entero();
-			}
+		}while (dia <1 | dia >31);
+		do {
 			System.out.print("Introduce el mes: (01 - 12) ");
 			mes = Entrada.entero();
-			while (mes <1 & mes >12) {
-				System.out.print("Introduce un mes valido: (1 - 12) ");
-				mes = Entrada.entero();
-			}
+		}while (mes <1 | mes >12);
+		do {
 			System.out.print("Introduce el año: (2019 - 20**) ");
 			ano = Entrada.entero();
-			while ( ano < (LocalDate.now().getYear())) {
-				System.out.print("Introduce un año valido: (2019 - 20**) ");
-				ano = Entrada.entero();
-			}
-		} while(LocalDate.of(ano, mes, dia).isBefore(LocalDate.now()));
+		}while ( ano < (LocalDate.now().getYear()));
 		return LocalDate.of(ano, mes, dia);	
 	}
 }
